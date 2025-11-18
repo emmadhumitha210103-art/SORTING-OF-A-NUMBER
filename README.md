@@ -21,14 +21,33 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 
 ## Program (Ascending order)
 
-```asm
+```
 
-
+ORG 000H
+LOOP1:MOV R0,#40H
+MOV R6,30H
+LOOP:MOV A, @R0
+INC R0
+MOV B, @R0
+CJNE A,B,NEXT 
+NEXT:JC DOWN
+MOV @R0,A
+DEC R0
+MOV @R0,B
+INC R0
+DOWN: DJNZ R6, LOOP
+MOV R1, #02H
+DJNZ R1, LOOP1
+END
 
 
 ```
 ## OUTPUT(Ascending order)
 
+![ascending code](https://github.com/user-attachments/assets/0b4454fd-e30c-4907-a9bd-b6f4d78134bf)
+
+
+![ascending output](https://github.com/user-attachments/assets/1bd9f553-8b68-4f60-841d-3b6c9f7ab27c)
 
 
 ---
@@ -47,17 +66,33 @@ To write and execute an Assembly Language Program for sorting data in Ascending 
 ---
 ## Program (Descending order)
 
-```asm
-
-
+```
+ORG 000H
+LOOP1:MOV R0,#40H
+MOV R6,30H
+LOOP:MOV A, @R0
+INC R0
+MOV B, @R0
+CJNE A,B,NEXT 
+NEXT:JNC DOWN
+MOV @R0,A
+DEC R0
+MOV @R0,B
+INC R0
+DOWN: DJNZ R6, LOOP
+MOV R1, #02H
+DJNZ R1, LOOP1
+END
 
 
 ```
 ## OUTPUT(Descending order)
 
+![descending code](https://github.com/user-attachments/assets/1a042f22-f8af-445f-ab40-8a756e215639)
 
+
+![descending op](https://github.com/user-attachments/assets/7b7db79f-7ab1-4579-8c41-8d116530a1fc)
 
 ---
 ## RESULT:
 Thus the sorting of given data was done using 8051 keil software.
-
